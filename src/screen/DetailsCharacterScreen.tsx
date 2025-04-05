@@ -42,49 +42,37 @@ const DetailsScreen = () => {
 
 
   return (
-    <ScrollView style={styles.container}> {/* Envuelve toda la vista con ScrollView */}
+    <ScrollView style={styles.container}> 
       <View>
-        {/* Boton para volver a la pantalla anterior */}
-        {/* <View style={styles.button}>
-          <TouchableOpacity
-            style={[styles.button, isPressed && styles.buttonPressed]} // Aplicamos estilo condicional
-            onPress={() => navigation.goBack()}
-            onPressIn={() => setIsPressed(true)} // Cuando el botón es presionado
-            onPressOut={() => setIsPressed(false)} // Cuando se deja de presionar
-          >
-            <Button title={'Volver'} onPress={() => navigation.goBack()} color={'#dd7907'}></Button>
-          </TouchableOpacity>
-        </View> */}
+       
 
         <Text style={styles.name}>{characterDetails.name}</Text>
         <Image source={{ uri: characterDetails.image }} style={styles.imageP} />
-        
 
-        {/* Detalles del personaje */}
         <View style={styles.card}>
           <Text style={styles.detailLabel}>Ki:</Text>
           <Text style={styles.detailsValue}>{characterDetails.ki}</Text>
-          {/* -------------- */}
+      
           <View style={styles.line}></View>
 
           <Text style={styles.detailLabel}>Raza:</Text>
           <Text style={styles.detailsValue}>{characterDetails.race}</Text>
-          {/* -------------- */}
+         
           <View style={styles.line}></View>
 
           <Text style={styles.detailLabel}>Genero:</Text>
           <Text style={styles.detailsValue}>{characterDetails.gender}</Text>
-          {/* -------------- */}
+         
           <View style={styles.line}></View>
 
           <Text style={styles.detailLabel}>Descripción:</Text>
           <Text style={styles.detailsValue}>{characterDetails.description}</Text>
-          {/* -------------- */}
+         
           <View style={styles.line}></View>
 
           <Text style={styles.detailLabel}>Planeta de Origen:</Text>
           <Text style={styles.detailsValue}>{characterDetails.originPlanet.name}</Text>
-          {/* -------------- */}
+        
           <View style={styles.line}></View>
           <Image source={{ uri: characterDetails.originPlanet.image }} style={styles.imagePlanet} />
           <Text style={styles.detailsValue}>{characterDetails.originPlanet.description}</Text>
@@ -92,9 +80,7 @@ const DetailsScreen = () => {
 
           <View style={styles.line}></View>
           <Text style={styles.detailLabel}>Transformaciones:</Text>
-          {/* <Text style={styles.detailsValue}>{characterDetails.transformation.name}</Text> */}
-          {/* <Image source={{ uri: characterDetails.transformation.image }} style={styles.imagePlanet} /> */}
-        
+         
         
         </View>
       </View>
@@ -120,6 +106,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     marginBottom: 20,
     alignSelf: 'center',
+    resizeMode:'contain',
   },
   imagePlanet:{
     width: 310,
@@ -127,6 +114,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginBottom: 10,
     alignSelf: 'center',
+    resizeMode:'contain',
   },
   name: {
     fontSize: 32,

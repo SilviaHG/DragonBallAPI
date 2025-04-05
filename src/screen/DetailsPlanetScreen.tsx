@@ -43,32 +43,22 @@ const DetailsPlantScreen = () => {
 
 
   return (
-    <ScrollView style={styles.container}> {/* Envuelve toda la vista con ScrollView */}
+    <ScrollView style={styles.container}> 
       <View>
-        {/* Boton para volver a la pantalla anterior */}
-        {/* <View style={styles.button}>
-          <TouchableOpacity
-            style={[styles.button, isPressed && styles.buttonPressed]} // Aplicamos estilo condicional
-            onPress={() => navigation.goBack()}
-            onPressIn={() => setIsPressed(true)} // Cuando el botón es presionado
-            onPressOut={() => setIsPressed(false)} // Cuando se deja de presionar
-          >
-            <Button title={'Volver'} onPress={() => navigation.goBack()} color={'#dd7907'}></Button>
-          </TouchableOpacity>
-        </View> */}
+      
 
         <Text style={styles.name}>{planetDetails.name}</Text>
         <Image source={{ uri: planetDetails.image }} style={styles.imagePlanet} />
         
-        {/* Detalles del planeta */}
+       
         
         <View style={styles.card}>
-            {/* -------------- */}
+         
           <View style={styles.line}></View>
 
           <Text style={styles.detailLabel}>Descripción:</Text>
           <Text style={styles.detailsValue}>{planetDetails.description}</Text>
-          {/* -------------- */}
+         
           <View style={styles.line}></View>
          </View>
       </View>

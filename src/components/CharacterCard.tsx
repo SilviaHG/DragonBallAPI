@@ -15,7 +15,7 @@ const CharacterCard=({character}:Props) => {
     <View style={styles.card}>
         <Image source={{ uri: character.image }} style={styles.image} />
 
-        <Pressable onPress={()=> navigation.navigate("DetailsScreen", {character: character.id })}>
+        <Pressable onPress={()=> navigation.navigate("DetailsCharacterScreen", {character: character.id })}>
             <Text style={styles.link}>Ver Detalles</Text>
         </Pressable>
 
@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
         width:'35%',
         height:300,
         borderRadius:10,
+        resizeMode:'contain',
         
     },
     name:{
