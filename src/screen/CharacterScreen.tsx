@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Character } from '../types/character';
-import { ActivityIndicator, Button, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import CharacterCard from '../components/CharacterCard';
 import api from '../api/api';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const CharacterScreen = () => {
   const [characters, setCharacters] = useState<Character[]>([]); // Personajes cargados
@@ -114,9 +115,10 @@ const CharacterScreen = () => {
       </ScrollView>
 
       {/* Botón para ir a la última página */}
-      <View style={styles.botonFlotante}>
-        <Button title="Ir a la última página" onPress={() => fetchCharacter(nextPageUrl)} />
-      </View>
+      
+      <TouchableOpacity style={styles.botonFlotante} onPress={() => fetchCharacter(nextPageUrl)}>
+      <Text style={styles.buttonText}>Ir a la última página</Text>
+    </TouchableOpacity>
     </View>
   );
 };
@@ -124,11 +126,29 @@ const CharacterScreen = () => {
 const styles = StyleSheet.create({
   botonFlotante: {
     position: 'absolute',
-    bottom: 38,
+    bottom: 80,
     right: 20,
     zIndex: 1,
-    width: 150,
+    width: 85,
     padding: 10,
+    color: '#fff',
+    backgroundColor: '#fab349', 
+    paddingVertical: 12, 
+    paddingHorizontal: 20, 
+    borderRadius: 10, 
+    alignItems: 'center',
+    justifyContent: 'center', 
+    shadowColor: '#000', 
+    shadowOffset: { width: 0, height: 4 }, 
+    shadowOpacity: 0.2, 
+    shadowRadius: 6, 
+    elevation: 5, 
+  },
+  buttonText: {
+    color: '#fff', // Color del texto
+    fontSize: 12, // Tamaño del texto
+    fontWeight: 'bold', // Estilo del texto (negrita)
+    textTransform: 'uppercase', // Convierte el texto a mayúsculas
   },
 });
 

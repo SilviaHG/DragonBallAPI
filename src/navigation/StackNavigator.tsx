@@ -7,6 +7,7 @@ import DetailsCharacterScreen from "../screen/DetailsCharacterScreen";
 import DetailsPlanetScreen from "../screen/DetailsPlanetScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import LoginScreen from "../screen/LoginScreen";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -27,10 +28,23 @@ const StackNavigator = () => {
                 name="InitialScreen"
                 component={() => (
                     <Drawer.Navigator initialRouteName="Inicio" screenOptions={{
+                        //estilos del header principal
                         headerStyle: {
                             backgroundColor: '#f79400', // Color de fondo del encabezado
                         },
                         headerTintColor: '#fff', // Color del texto del encabezado
+
+                        //el menú hamburguesa estilos
+                        drawerStyle:{
+                            backgroundColor: '#fab349',
+                        
+                        },
+                        
+                        drawerLabelStyle: {
+                            color: '#fff',
+                            fontSize: 18
+                        }
+                        
                     }}>
                         <Drawer.Screen name="Inicio" component={InitialScreen} />
                         <Drawer.Screen name="Personajes" component={CharacterScreen} />
